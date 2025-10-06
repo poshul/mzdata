@@ -942,6 +942,7 @@ impl ArrayType {
     }
 
     pub fn from_accession(x: CURIE) -> Option<Self> {
+        log::debug!("ArrayType::from_accession({x})");
         let tp = if x == Self::MZArray.as_param_const().curie().unwrap() {
             Self::MZArray
         } else if x == Self::IntensityArray.as_param_const().curie().unwrap() {
